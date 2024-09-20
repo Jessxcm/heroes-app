@@ -1,5 +1,6 @@
 import { Navigate, useNavigate, useParams } from "react-router-dom"
 import { getHeroById } from "../helpers";
+import { useMemo } from "react";
 
 export const HeroPage = () => {
 
@@ -7,7 +8,7 @@ export const HeroPage = () => {
 
   const {id} = useParams();
   
-  const hero = getHeroById(id);
+  const hero =  useMemo( ()=> getHeroById(id), [id]); 
 
   const onNavigateBack = () =>{
     navigate(-1); //regresar a navegacion anterior
@@ -25,7 +26,7 @@ export const HeroPage = () => {
         <img
         src={`/assets/heroes/${id}.jpg`}
         alt={ hero.superhero}
-        className="img-thumbnail"
+        className="img-thumbnail animate__animated animate__fadeInLeft"
         >
         </img>
       </div>
