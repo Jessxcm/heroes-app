@@ -5,7 +5,7 @@ import { AuthContext} from '../../auth/context/AuthContext'
 
 export const Navbar = ( ) => {
 
-    const {user} = useContext( AuthContext );
+    const { user } = useContext( AuthContext );
     console.log(user);
 
     const navigate = useNavigate();
@@ -56,7 +56,7 @@ export const Navbar = ( ) => {
             <div className="navbar-collapse collapse w-100 order-3 dual-collapse2 d-flex justify-content-end">
                 <ul className="navbar-nav ml-auto">
                     <span className="nav-item nav-link text-primary">
-                        Jessica Cala
+                       {user?.name}
                     </span>
                     <button
                     className="nav-item nav-link btn"
