@@ -1,5 +1,4 @@
-import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
-import queryString from 'query-string';
+import { useSearchParams } from 'react-router-dom';
 import { useForm } from '../../auth/hooks/useForm';
 import { HeroCard } from '../components';
 import { getHeroesByName } from '../helpers';
